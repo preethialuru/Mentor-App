@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+input, select {
+  width: 30%;
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 20%;
+  background-color: #4CAF50;
+  align:center;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.container {
+  padding: 16px;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+body {
+    text-align: center;
+}
+
+    </style>
+</head>
+<body style="background-color:#000000">
+<center><h1 class="title" style="text-align: center;color:#00d1b2">Login</h1></center>
+<div class="container">
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.username }}<br>
+        {{ form.password }}<br>
+        <input style="top: 47%; right:40%;position:absolute;background-color:#00d1b2;" type="submit" value="Login">
+    </form>
+</div>
+<a href="{%url 'signup'%}">SignUp here</a>
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjr1YTTwe7iAhURdysKHYJsBu0QjRx6BAgBEAU&url=https%3A%2F%2Fwww.kisspng.com%2Fpng-computer-icons-avatar-user-login-1550538%2F&psig=AOvVaw0Wr7igXMhsbinaXsdPrOKQ&ust=1560792011719062" type="image/x-icon" />
+    <title>Log In</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+  </head>
+  <body>
+  <center
+    <div class="columns is-vcentered">
+      <div class="login column is-4 ">
+        <section class="section">
+          <div class="has-text-centered">
+              <img class="login-logo" src="assets/img/logo_r_resumme.png">
+          </div>
+
+          <div class="field">
+            <label class="label">Username</label>
+            <div class="control has-icons-right">
+              <input class="input" type="text">
+              <span class="icon is-small is-right">
+                <i class="fa fa-user"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control has-icons-right">
+              <input class="input" type="password">
+              <span class="icon is-small is-right">
+                <i class="fa fa-key"></i>
+              </span>
+            </div>
+          </div>
+          <div class="has-text-centered">
+            <a class="button is-vcentered is-primary is-outlined">Login</a>
+          </div>
+          <div class="has-text-centered">
+            <a href="signup.html"> Don't you have an account? Sign up now!</a>
+          </div>
+        </section>
+      </div>
+      <div id="particles-js" class="interactive-bg column is-8">
+      </div>
+    </div>
+  </body>
+</html>
+-->

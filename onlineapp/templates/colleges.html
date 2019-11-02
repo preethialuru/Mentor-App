@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" style="background-color:#000000">
+<head >
+    <link rel="stylesheet" href="{% static 'css/bulma.css' %}">
+</head>
+<body>
+{% if request.user.is_authenticated %}
+    <button style="top: 10px;right: 10px;position:absolute;" class="button is-primary" onclick="window.location.href='{% url 'logout'%}'">Logout</button>
+    <button style="top: 10px;left: 10px;position:absolute;" class="button is-primary" onclick="window.location.href='{% url 'add_college' %}'">Add College</button>
+{% endif %}
+<h1 class="title" style="text-align: center;color:#FFFFFF">Participating Colleges</h1>
+
+{% if perms.onlineapp.addCollege %}
+{% endif %}
+<br>
+<table class="table is-striped is-fullwidth th" id="list" style="background-color:#CACCCE;">
+    <thead style="background-color:#00d1b2;"> <th>Id</th><th>Name</th><th>Contact</th><th>Action</th>
+        {% if perms.onlineapp.editCollege and perms.onlineapp.deleteCollege %}
+
+        {% endif %}
+    </thead>
+    {% for jail in jails %}
+    <tr>
+    <td>{{jail.id}}</td>
+        <td><a href="{% url 'college_details_id' jail.id%}">{{jail.name}}</a></td>
+        <td>{{jail.contact}}</td>
+        <td><a href="{% url 'edit_college' jail.id%}">edit</a>          <a href="{% url 'delete_college' jail.id%}">delete</a></td>
+        {% if perms.onlineapp.editCollege and perms.onlineapp.deleteCollege %}
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

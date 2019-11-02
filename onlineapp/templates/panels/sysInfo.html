@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<table>
+    <thead>
+        <tr><th>PID</th><th>Process</th><th>System Memory</th><th>Virtual Memory</th></tr>
+    </thead>
+    <tbody>
+        {% for pid,process,sm,vm in sysInfo %}
+        <tr>
+				<td>{{ pid }}</td>
+                <td>{{ Process Name }}</td>
+				<td>{{ System Memory }}</td>
+                <td>{{ Virtual Memory }}</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

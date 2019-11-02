@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+input, select {
+  width: 30%;
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 20%;
+  background-color: #4CAF50;
+  align:center;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.container {
+  padding: 16px;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+body {
+    text-align: center;
+}
+
+ #button {
+     line-height: 12px;
+     width: 18px;
+     font-size: 8pt;
+     font-family: tahoma;
+     margin-top: 1px;
+     margin-right: 2px;
+     position:absolute;
+     top:0;
+     right:0;
+ }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'bulma.css' %}">
+</head>
+<body style="background-color:#000000">
+<center><h1 class="title" style="text-align: center;color:#00d1b2">Add Student</h1></center>
+<div class="container">
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form1.name }}<br>
+        {{ form1.email }}<br>
+        {{ form1.db_folder }}<br>
+        {{ form2.problem1 }}<br>
+        {{ form2.problem2 }}<br>
+        {{ form2.problem3 }}<br>
+        {{ form2.problem4 }}<br>
+        {{ form1.dropped_out }}<br>
+        <input style="top: 80%; right:40%;position:absolute;background-color:#00d1b2;" type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
